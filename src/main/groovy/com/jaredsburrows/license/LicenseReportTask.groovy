@@ -93,6 +93,7 @@ class LicenseReportTask extends DefaultTask {
       if (project.configurations.find { it.name == "compile" }) configurations << project.configurations."${buildType}Compile"
       if (project.configurations.find { it.name == "api" }) configurations << project.configurations."${buildType}Api"
       if (project.configurations.find { it.name == "implementation" }) configurations << project.configurations."${buildType}Implementation"
+      if (project.configurations.find { it.name == "releaseImplementation" }) configurations << project.configurations."${buildType}releaseImplementation"
 
       // Add productFlavors configurations
       productFlavors.each { flavor ->
@@ -101,6 +102,7 @@ class LicenseReportTask extends DefaultTask {
           if (project.configurations.find { it.name == "compile" }) configurations << project.configurations."${flavor.name}Compile"
           if (project.configurations.find { it.name == "api" }) configurations << project.configurations."${flavor.name}Api"
           if (project.configurations.find { it.name == "implementation" }) configurations << project.configurations."${flavor.name}Implementation"
+          if (project.configurations.find { it.name == "releaseImplementation" }) configurations << project.configurations."${flavor.name}releaseImplementation"
         }
       }
     }
